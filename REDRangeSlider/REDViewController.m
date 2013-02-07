@@ -26,7 +26,8 @@
     
     [super viewDidLoad];
     
-    self.rangeSlider = [[REDRangeSlider alloc] initWithFrame:CGRectMake(100, 100, 200, 20)];
+    self.rangeSlider = [[REDRangeSlider alloc] initWithFrame:CGRectMake(0, 0, 200, 20)];
+    self.rangeSlider.center = self.view.center;
     [self.rangeSlider addTarget:self action:@selector(rangeSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     
     [self.view addSubview:self.rangeSlider];
