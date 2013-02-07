@@ -10,6 +10,8 @@ Hire me at http://riothq.com
 
 https://gist.github.com/reddavis/4731416
 
+![image](http://f.cl.ly/items/1D2h1t1X2P3j2t0M1S1W/Image%202013.02.07%2015:18:41.png)
+
 ## Getting Started
 
 Copy all files from **REDRangeSlider** directory into your project.
