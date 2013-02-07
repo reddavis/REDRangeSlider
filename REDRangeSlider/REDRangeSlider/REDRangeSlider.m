@@ -170,10 +170,7 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     self.rightHandle.frame = CGRectMake(0, 0, self.handleImage.size.width+kREDHandleTapTargetRadius, self.handleImage.size.height+kREDHandleTapTargetRadius);
     self.rightHandle.contentMode = UIViewContentModeCenter;
     self.rightHandle.userInteractionEnabled = YES;
-    
-    self.leftHandle.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.3];
-    self.rightHandle.backgroundColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.3];
-    
+        
     UIPanGestureRecognizer *rightPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(rightHandlePanEngadged:)];
     rightPanGesture.delegate = self;
     [self.rightHandle addGestureRecognizer:rightPanGesture];
