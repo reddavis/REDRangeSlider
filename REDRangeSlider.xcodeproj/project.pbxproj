@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A4F93B7F16C282710096D01D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F93B7E16C282710096D01D /* UIKit.framework */; };
+		A4F93B8116C282710096D01D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F93B8016C282710096D01D /* Foundation.framework */; };
+		A4F93B8316C282710096D01D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F93B8216C282710096D01D /* CoreGraphics.framework */; };
+		A4F93B8916C282710096D01D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4F93B8716C282710096D01D /* InfoPlist.strings */; };
+		A4F93B8B16C282710096D01D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F93B8A16C282710096D01D /* main.m */; };
+		A4F93B8F16C282710096D01D /* REDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F93B8E16C282710096D01D /* REDAppDelegate.m */; };
+		A4F93B9116C282710096D01D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93B9016C282710096D01D /* Default.png */; };
+		A4F93B9316C282710096D01D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93B9216C282710096D01D /* Default@2x.png */; };
+		A4F93B9516C282710096D01D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93B9416C282710096D01D /* Default-568h@2x.png */; };
+		A4F93B9816C282710096D01D /* REDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F93B9716C282710096D01D /* REDViewController.m */; };
+		A4F93B9B16C282710096D01D /* REDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F93B9916C282710096D01D /* REDViewController.xib */; };
+		A4F93BA416C282DD0096D01D /* REDRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F93BA316C282DD0096D01D /* REDRangeSlider.m */; };
+		A4F93BAE16C284260096D01D /* slider-track-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93BA616C284260096D01D /* slider-track-background@2x.png */; };
+		A4F93BAF16C284260096D01D /* slider-handle-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93BA716C284260096D01D /* slider-handle-highlighted.png */; };
+		A4F93BB016C284260096D01D /* slider-handle-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93BA816C284260096D01D /* slider-handle-highlighted@2x.png */; };
+		A4F93BB116C284260096D01D /* slider-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93BA916C284260096D01D /* slider-handle.png */; };
+		A4F93BB216C284260096D01D /* slider-handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93BAA16C284260096D01D /* slider-handle@2x.png */; };
+		A4F93BB316C284260096D01D /* slider-track-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93BAB16C284260096D01D /* slider-track-fill.png */; };
+		A4F93BB416C284260096D01D /* slider-track-fill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93BAC16C284260096D01D /* slider-track-fill@2x.png */; };
+		A4F93BB516C284260096D01D /* slider-track-background.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F93BAD16C284260096D01D /* slider-track-background.png */; };
+		A4F93BB716C3F5DC0096D01D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A4F93BB616C3F5DC0096D01D /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A4F93B7B16C282710096D01D /* REDRangeSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REDRangeSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4F93B7E16C282710096D01D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A4F93B8016C282710096D01D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A4F93B8216C282710096D01D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A4F93B8616C282710096D01D /* REDRangeSlider-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "REDRangeSlider-Info.plist"; sourceTree = "<group>"; };
+		A4F93B8816C282710096D01D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A4F93B8A16C282710096D01D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A4F93B8C16C282710096D01D /* REDRangeSlider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "REDRangeSlider-Prefix.pch"; sourceTree = "<group>"; };
+		A4F93B8D16C282710096D01D /* REDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REDAppDelegate.h; sourceTree = "<group>"; };
+		A4F93B8E16C282710096D01D /* REDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REDAppDelegate.m; sourceTree = "<group>"; };
+		A4F93B9016C282710096D01D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A4F93B9216C282710096D01D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A4F93B9416C282710096D01D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A4F93B9616C282710096D01D /* REDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REDViewController.h; sourceTree = "<group>"; };
+		A4F93B9716C282710096D01D /* REDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REDViewController.m; sourceTree = "<group>"; };
+		A4F93B9A16C282710096D01D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/REDViewController.xib; sourceTree = "<group>"; };
+		A4F93BA216C282DD0096D01D /* REDRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDRangeSlider.h; sourceTree = "<group>"; };
+		A4F93BA316C282DD0096D01D /* REDRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDRangeSlider.m; sourceTree = "<group>"; };
+		A4F93BA616C284260096D01D /* slider-track-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-track-background@2x.png"; sourceTree = "<group>"; };
+		A4F93BA716C284260096D01D /* slider-handle-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-handle-highlighted.png"; sourceTree = "<group>"; };
+		A4F93BA816C284260096D01D /* slider-handle-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-handle-highlighted@2x.png"; sourceTree = "<group>"; };
+		A4F93BA916C284260096D01D /* slider-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-handle.png"; sourceTree = "<group>"; };
+		A4F93BAA16C284260096D01D /* slider-handle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-handle@2x.png"; sourceTree = "<group>"; };
+		A4F93BAB16C284260096D01D /* slider-track-fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-track-fill.png"; sourceTree = "<group>"; };
+		A4F93BAC16C284260096D01D /* slider-track-fill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-track-fill@2x.png"; sourceTree = "<group>"; };
+		A4F93BAD16C284260096D01D /* slider-track-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-track-background.png"; sourceTree = "<group>"; };
+		A4F93BB616C3F5DC0096D01D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4F93B7816C282710096D01D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4F93B7F16C282710096D01D /* UIKit.framework in Frameworks */,
+				A4F93B8116C282710096D01D /* Foundation.framework in Frameworks */,
+				A4F93B8316C282710096D01D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4F93B7216C282710096D01D = {
+			isa = PBXGroup;
+			children = (
+				A4F93B8416C282710096D01D /* REDRangeSlider */,
+				A4F93B7D16C282710096D01D /* Frameworks */,
+				A4F93B7C16C282710096D01D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4F93B7C16C282710096D01D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4F93B7B16C282710096D01D /* REDRangeSlider.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4F93B7D16C282710096D01D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4F93B7E16C282710096D01D /* UIKit.framework */,
+				A4F93B8016C282710096D01D /* Foundation.framework */,
+				A4F93B8216C282710096D01D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4F93B8416C282710096D01D /* REDRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				A4F93B8D16C282710096D01D /* REDAppDelegate.h */,
+				A4F93B8E16C282710096D01D /* REDAppDelegate.m */,
+				A4F93B9616C282710096D01D /* REDViewController.h */,
+				A4F93B9916C282710096D01D /* REDViewController.xib */,
+				A4F93B9716C282710096D01D /* REDViewController.m */,
+				A4F93BA116C282A20096D01D /* REDRangeSlider */,
+				A4F93B8516C282710096D01D /* Supporting Files */,
+			);
+			path = REDRangeSlider;
+			sourceTree = "<group>";
+		};
+		A4F93B8516C282710096D01D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4F93BB616C3F5DC0096D01D /* README.md */,
+				A4F93B8616C282710096D01D /* REDRangeSlider-Info.plist */,
+				A4F93B8716C282710096D01D /* InfoPlist.strings */,
+				A4F93B8A16C282710096D01D /* main.m */,
+				A4F93B8C16C282710096D01D /* REDRangeSlider-Prefix.pch */,
+				A4F93B9016C282710096D01D /* Default.png */,
+				A4F93B9216C282710096D01D /* Default@2x.png */,
+				A4F93B9416C282710096D01D /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4F93BA116C282A20096D01D /* REDRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				A4F93BA216C282DD0096D01D /* REDRangeSlider.h */,
+				A4F93BA316C282DD0096D01D /* REDRangeSlider.m */,
+				A4F93BA516C283660096D01D /* Images */,
+			);
+			path = REDRangeSlider;
+			sourceTree = "<group>";
+		};
+		A4F93BA516C283660096D01D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A4F93BA616C284260096D01D /* slider-track-background@2x.png */,
+				A4F93BA716C284260096D01D /* slider-handle-highlighted.png */,
+				A4F93BA816C284260096D01D /* slider-handle-highlighted@2x.png */,
+				A4F93BA916C284260096D01D /* slider-handle.png */,
+				A4F93BAA16C284260096D01D /* slider-handle@2x.png */,
+				A4F93BAB16C284260096D01D /* slider-track-fill.png */,
+				A4F93BAC16C284260096D01D /* slider-track-fill@2x.png */,
+				A4F93BAD16C284260096D01D /* slider-track-background.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4F93B7A16C282710096D01D /* REDRangeSlider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4F93B9E16C282710096D01D /* Build configuration list for PBXNativeTarget "REDRangeSlider" */;
+			buildPhases = (
+				A4F93B7716C282710096D01D /* Sources */,
+				A4F93B7816C282710096D01D /* Frameworks */,
+				A4F93B7916C282710096D01D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = REDRangeSlider;
+			productName = REDRangeSlider;
+			productReference = A4F93B7B16C282710096D01D /* REDRangeSlider.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4F93B7316C282710096D01D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RED;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Red Davis";
+			};
+			buildConfigurationList = A4F93B7616C282710096D01D /* Build configuration list for PBXProject "REDRangeSlider" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A4F93B7216C282710096D01D;
+			productRefGroup = A4F93B7C16C282710096D01D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4F93B7A16C282710096D01D /* REDRangeSlider */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4F93B7916C282710096D01D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4F93B8916C282710096D01D /* InfoPlist.strings in Resources */,
+				A4F93B9116C282710096D01D /* Default.png in Resources */,
+				A4F93B9316C282710096D01D /* Default@2x.png in Resources */,
+				A4F93B9516C282710096D01D /* Default-568h@2x.png in Resources */,
+				A4F93B9B16C282710096D01D /* REDViewController.xib in Resources */,
+				A4F93BAE16C284260096D01D /* slider-track-background@2x.png in Resources */,
+				A4F93BAF16C284260096D01D /* slider-handle-highlighted.png in Resources */,
+				A4F93BB016C284260096D01D /* slider-handle-highlighted@2x.png in Resources */,
+				A4F93BB116C284260096D01D /* slider-handle.png in Resources */,
+				A4F93BB216C284260096D01D /* slider-handle@2x.png in Resources */,
+				A4F93BB316C284260096D01D /* slider-track-fill.png in Resources */,
+				A4F93BB416C284260096D01D /* slider-track-fill@2x.png in Resources */,
+				A4F93BB516C284260096D01D /* slider-track-background.png in Resources */,
+				A4F93BB716C3F5DC0096D01D /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4F93B7716C282710096D01D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4F93B8B16C282710096D01D /* main.m in Sources */,
+				A4F93B8F16C282710096D01D /* REDAppDelegate.m in Sources */,
+				A4F93B9816C282710096D01D /* REDViewController.m in Sources */,
+				A4F93BA416C282DD0096D01D /* REDRangeSlider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A4F93B8716C282710096D01D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4F93B8816C282710096D01D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A4F93B9916C282710096D01D /* REDViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4F93B9A16C282710096D01D /* en */,
+			);
+			name = REDViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A4F93B9C16C282710096D01D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A4F93B9D16C282710096D01D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4F93B9F16C282710096D01D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "REDRangeSlider/REDRangeSlider-Prefix.pch";
+				INFOPLIST_FILE = "REDRangeSlider/REDRangeSlider-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A4F93BA016C282710096D01D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "REDRangeSlider/REDRangeSlider-Prefix.pch";
+				INFOPLIST_FILE = "REDRangeSlider/REDRangeSlider-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4F93B7616C282710096D01D /* Build configuration list for PBXProject "REDRangeSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4F93B9C16C282710096D01D /* Debug */,
+				A4F93B9D16C282710096D01D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4F93B9E16C282710096D01D /* Build configuration list for PBXNativeTarget "REDRangeSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4F93B9F16C282710096D01D /* Debug */,
+				A4F93BA016C282710096D01D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4F93B7316C282710096D01D /* Project object */;
+}
