@@ -20,6 +20,11 @@ Copy all files from **REDRangeSlider** directory into your project.
 
 https://gist.github.com/reddavis/4731438
 
+## TODO
+
+* Be able to set the minumum/maximum spacing between right and left values.
+* Dragging in the middle of the two handles will move both handles.
+
 ## Acknowledgement
 
 The default images I use were taken from: https://github.com/muZZkat/NMRangeSlider. As of writing this, they are under the MIT license.
