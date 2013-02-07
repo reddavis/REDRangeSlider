@@ -39,9 +39,7 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     
     self = [super initWithFrame:frame];
     if (self) {
-        
-        self.layer.masksToBounds = NO;
-        
+                
         self.handleImage = [UIImage imageNamed:@"slider-handle"];
         self.handleHighlightedImage = [UIImage imageNamed:@"slider-handle-highlighted"];
         self.trackBackgroundImage = [[UIImage imageNamed:@"slider-track-background"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
@@ -173,11 +171,29 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     self.rightHandle.contentMode = UIViewContentModeCenter;
     self.rightHandle.userInteractionEnabled = YES;
     
+    self.leftHandle.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.3];
+    self.rightHandle.backgroundColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.3];
+    
     UIPanGestureRecognizer *rightPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(rightHandlePanEngadged:)];
     rightPanGesture.delegate = self;
     [self.rightHandle addGestureRecognizer:rightPanGesture];
     
     [self addSubview:self.rightHandle];
+}
+
+#pragma mark -
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    
+    for (UIView *subView in self.subviews) {
+        
+        UIView *hitView = [subView hitTest:[self convertPoint:point toView:subView] withEvent:event];
+        if (hitView) {
+            return hitView;
+        }
+    }
+    
+    return [super hitTest:point withEvent:event];
 }
 
 #pragma mark - Gestures
