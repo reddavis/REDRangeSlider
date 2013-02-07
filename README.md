@@ -12,7 +12,7 @@ https://gist.github.com/reddavis/4731416
 
 ## Getting Started
 
-Copy all files from "**REDRangeSlider**" directory into your project.
+Copy all files from **REDRangeSlider** directory into your project.
 
 ## Customisation
 
