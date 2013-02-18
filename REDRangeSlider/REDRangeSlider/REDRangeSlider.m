@@ -45,7 +45,7 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     if (leftValue <= self.minValue) {
         _leftValue = self.minValue;
     }
-    else if (leftValue >= self.minValue && leftValue <= self.rightValue) {
+    else if (leftValue >= self.minValue && leftValue <= self.rightValue - self.minimumSpacing) {
                 
         _leftValue = leftValue;
     }
@@ -58,7 +58,7 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     if (rightValue >= self.maxValue) {
         _rightValue = self.maxValue;
     }
-    else if (rightValue <= self.maxValue && rightValue > self.leftValue) {
+    else if (rightValue <= self.maxValue && rightValue > self.leftValue + self.minimumSpacing) {
                 
         _rightValue = rightValue;
     }
