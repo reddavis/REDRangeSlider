@@ -23,6 +23,8 @@
 
 @property (readonly, nonatomic) CGFloat trackWidth;
 
+@property (assign, nonatomic) BOOL didSetupUI;
+
 - (void)setupUI;
 - (void)leftHandlePanEngadged:(UIGestureRecognizer *)gesture;
 - (void)rightHandlePanEngadged:(UIGestureRecognizer *)gesture;
@@ -35,31 +37,6 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 
 @implementation REDRangeSlider
 
-- (id)initWithFrame:(CGRect)frame {
-    
-    self = [super initWithFrame:frame];
-    if (self) {
-                
-        self.handleImage = [UIImage imageNamed:@"slider-handle"];
-        self.handleHighlightedImage = [UIImage imageNamed:@"slider-handle-highlighted"];
-        self.trackBackgroundImage = [[UIImage imageNamed:@"slider-track-background"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
-        self.trackFillImage = [[UIImage imageNamed:@"slider-track-fill"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
-        
-        [self setupUI];
-    }
-    
-    return self;
-}
-
-- (void)awakeFromNib {
-    
-    self.handleImage = [UIImage imageNamed:@"slider-handle"];
-    self.handleHighlightedImage = [UIImage imageNamed:@"slider-handle-highlighted"];
-    self.trackBackgroundImage = [[UIImage imageNamed:@"slider-track-background"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
-    self.trackFillImage = [[UIImage imageNamed:@"slider-track-fill"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
-    
-    [self setupUI];
-}
 
 #pragma mark -
 
@@ -104,6 +81,11 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 #pragma mark - View Setup
 
 - (void)layoutSubviews {
+    
+    if (!self.didSetupUI) {
+        [self setupUI];
+        self.didSetupUI = YES;
+    }
         
     self.sliderBackground.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.sliderBackground.frame));
     self.sliderBackground.center = CGPointMake(floorf(CGRectGetWidth(self.bounds)/2), floorf(CGRectGetHeight(self.bounds)/2));
@@ -176,6 +158,40 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     [self.rightHandle addGestureRecognizer:rightPanGesture];
     
     [self addSubview:self.rightHandle];
+}
+
+#pragma mark - Image properties
+
+- (UIImage *)handleImage {
+    if(!_handleImage) {
+        UIImage *image = [UIImage imageNamed:@"slider-handle"];
+        _handleImage = image;
+    }
+    return _handleImage;
+}
+
+- (UIImage *)handleHighlightedImage {
+    if(!_handleHighlightedImage) {
+        UIImage *image = [UIImage imageNamed:@"slider-handle-highlighted"];
+        _handleHighlightedImage = image;
+    }
+    return _handleHighlightedImage;
+}
+
+- (UIImage *)trackBackgroundImage {
+    if(!_trackBackgroundImage) {
+        UIImage *image = [[UIImage imageNamed:@"slider-track-background"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
+        _trackBackgroundImage = image;
+    }
+    return _trackBackgroundImage;
+}
+
+- (UIImage *)trackFillImage {
+    if(!_trackFillImage) {
+        UIImage *image = [[UIImage imageNamed:@"slider-track-fill"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
+        _trackFillImage = image;
+    }
+    return _trackFillImage;
 }
 
 #pragma mark -
