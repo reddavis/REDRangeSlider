@@ -17,7 +17,13 @@
 @property (assign, nonatomic) CGFloat rightValue;
 
 @property (strong, nonatomic) UIImage *handleImage;
+@property (strong, nonatomic) UIImage *leftHandleImage;
+@property (strong, nonatomic) UIImage *rightHandleImage;
+
 @property (strong, nonatomic) UIImage *handleHighlightedImage;
+@property (strong, nonatomic) UIImage *leftHandleHighlightedImage;
+@property (strong, nonatomic) UIImage *rightHandleHighlightedImage;
+
 @property (strong, nonatomic) UIImage *trackBackgroundImage;
 @property (strong, nonatomic) UIImage *trackFillImage;
 
