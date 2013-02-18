@@ -136,8 +136,9 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     [self addSubview:self.sliderFillBackground];
     
     self.leftHandle = [[UIImageView alloc] init];
-    self.leftHandle.image = self.handleImage;
-    self.leftHandle.frame = CGRectMake(0, 0, self.handleImage.size.width+kREDHandleTapTargetRadius, self.handleImage.size.height+kREDHandleTapTargetRadius);
+    self.leftHandle.image = self.leftHandleImage;
+    self.leftHandle.highlightedImage = self.leftHandleHighlightedImage;
+    self.leftHandle.frame = CGRectMake(0, 0, self.rightHandleImage.size.width+kREDHandleTapTargetRadius, self.rightHandleImage.size.height+kREDHandleTapTargetRadius);
     self.leftHandle.contentMode = UIViewContentModeCenter;
     self.leftHandle.userInteractionEnabled = YES;
     
@@ -148,8 +149,9 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     [self addSubview:self.leftHandle];
     
     self.rightHandle = [[UIImageView alloc] init];
-    self.rightHandle.image = self.handleImage;
-    self.rightHandle.frame = CGRectMake(0, 0, self.handleImage.size.width+kREDHandleTapTargetRadius, self.handleImage.size.height+kREDHandleTapTargetRadius);
+    self.rightHandle.image = self.rightHandleImage;
+    self.rightHandle.highlightedImage = self.rightHandleHighlightedImage;
+    self.rightHandle.frame = CGRectMake(0, 0, self.rightHandleImage.size.width+kREDHandleTapTargetRadius, self.rightHandleImage.size.height+kREDHandleTapTargetRadius);
     self.rightHandle.contentMode = UIViewContentModeCenter;
     self.rightHandle.userInteractionEnabled = YES;
         
@@ -170,12 +172,40 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     return _handleImage;
 }
 
+- (UIImage *)leftHandleImage {
+    if (!_leftHandleImage) {
+        return [self handleImage];
+    }
+    return _leftHandleImage;
+}
+
+- (UIImage *)rightHandleImage {
+    if (!_rightHandleImage) {
+        return [self handleImage];
+    }
+    return _rightHandleImage;
+}
+
 - (UIImage *)handleHighlightedImage {
     if(!_handleHighlightedImage) {
         UIImage *image = [UIImage imageNamed:@"slider-handle-highlighted"];
         _handleHighlightedImage = image;
     }
     return _handleHighlightedImage;
+}
+
+- (UIImage *)leftHandleHighlightedImage {
+    if (!_leftHandleHighlightedImage) {
+        return [self handleHighlightedImage];
+    }
+    return _leftHandleHighlightedImage;
+}
+
+- (UIImage *)rightHandleHighlightedImage {
+    if (!_rightHandleHighlightedImage) {
+        return [self handleHighlightedImage];
+    }
+    return _rightHandleHighlightedImage;
 }
 
 - (UIImage *)trackBackgroundImage {
