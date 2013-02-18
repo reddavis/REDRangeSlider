@@ -242,10 +242,13 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 #pragma mark - Gestures
 
 - (void)leftHandlePanEngadged:(UIGestureRecognizer *)gesture {
-    
+
     UIPanGestureRecognizer *panGesture = (UIPanGestureRecognizer *)gesture;
     
-    if (panGesture.state == UIGestureRecognizerStateChanged) {
+    if (panGesture.state == UIGestureRecognizerStateBegan) {
+            self.leftHandle.highlighted = YES;
+    }
+    else if (panGesture.state == UIGestureRecognizerStateChanged) {
         
         CGPoint pointInView = [panGesture translationInView:self];
         CGFloat oneHundredPercentOfValues = self.maxValue - self.minValue;
@@ -258,12 +261,20 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
         [panGesture setTranslation:CGPointZero inView:self];
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
+    else if (panGesture.state == UIGestureRecognizerStateCancelled ||
+             panGesture.state == UIGestureRecognizerStateEnded ||
+             panGesture.state == UIGestureRecognizerStateCancelled) {
+        self.leftHandle.highlighted = NO;
+    }
 }
 
 - (void)rightHandlePanEngadged:(UIGestureRecognizer *)gesture {
     
     UIPanGestureRecognizer *panGesture = (UIPanGestureRecognizer *)gesture;
-    
+
+    if (panGesture.state == UIGestureRecognizerStateBegan) {
+        self.rightHandle.highlighted = YES;
+    }
     if (panGesture.state == UIGestureRecognizerStateChanged) {
         
         CGPoint pointInView = [panGesture translationInView:self];
@@ -276,6 +287,11 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
         
         [panGesture setTranslation:CGPointZero inView:self];
         [self sendActionsForControlEvents:UIControlEventValueChanged];
+    }
+    else if (panGesture.state == UIGestureRecognizerStateCancelled ||
+             panGesture.state == UIGestureRecognizerStateEnded ||
+             panGesture.state == UIGestureRecognizerStateCancelled) {
+        self.rightHandle.highlighted = NO;
     }
 }
 
