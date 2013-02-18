@@ -241,6 +241,13 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 
 #pragma mark - Gestures
 
+- (CGFloat)roundValueToStepValue:(CGFloat)value {
+    if (self.stepValue == 0.0) {
+        return value;
+    }
+    return self.stepValue * floor((value/self.stepValue)+0.5);
+}
+
 - (void)leftHandlePanEngadged:(UIGestureRecognizer *)gesture {
 
     UIPanGestureRecognizer *panGesture = (UIPanGestureRecognizer *)gesture;
@@ -265,6 +272,8 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
              panGesture.state == UIGestureRecognizerStateEnded ||
              panGesture.state == UIGestureRecognizerStateCancelled) {
         self.leftHandle.highlighted = NO;
+        self.leftValue = [self roundValueToStepValue:self.leftValue];
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
 }
 
@@ -292,6 +301,8 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
              panGesture.state == UIGestureRecognizerStateEnded ||
              panGesture.state == UIGestureRecognizerStateCancelled) {
         self.rightHandle.highlighted = NO;
+        self.rightValue = [self roundValueToStepValue:self.rightValue];
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
 }
 
