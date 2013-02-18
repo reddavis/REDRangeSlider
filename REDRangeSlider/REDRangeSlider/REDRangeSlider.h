@@ -27,4 +27,7 @@
 @property (strong, nonatomic) UIImage *trackBackgroundImage;
 @property (strong, nonatomic) UIImage *trackFillImage;
 
+@property (assign, nonatomic) CGFloat stepValue;
+@property (assign, nonatomic) CGFloat minimumSpacing;
+
 @end
