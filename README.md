@@ -22,7 +22,7 @@ https://gist.github.com/reddavis/4731438
 
 ## TODO
 
-* Be able to set the minumum/maximum spacing between right and left values.
+* Be able to set the ~~minumum~~/maximum spacing between right and left values.
 * Dragging in the middle of the two handles will move both handles.
 
 ## Acknowledgement

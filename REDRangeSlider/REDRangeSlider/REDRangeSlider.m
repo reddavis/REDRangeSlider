@@ -45,7 +45,7 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     if (leftValue <= self.minValue) {
         _leftValue = self.minValue;
     }
-    else if (leftValue >= self.minValue && leftValue <= self.rightValue) {
+    else if (leftValue >= self.minValue && leftValue <= self.rightValue - self.minimumSpacing) {
                 
         _leftValue = leftValue;
     }
@@ -58,7 +58,7 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     if (rightValue >= self.maxValue) {
         _rightValue = self.maxValue;
     }
-    else if (rightValue <= self.maxValue && rightValue > self.leftValue) {
+    else if (rightValue <= self.maxValue && rightValue > self.leftValue + self.minimumSpacing) {
                 
         _rightValue = rightValue;
     }
@@ -241,6 +241,13 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 
 #pragma mark - Gestures
 
+- (CGFloat)roundValueToStepValue:(CGFloat)value {
+    if (self.stepValue == 0.0) {
+        return value;
+    }
+    return self.stepValue * floor((value/self.stepValue)+0.5);
+}
+
 - (void)leftHandlePanEngadged:(UIGestureRecognizer *)gesture {
 
     UIPanGestureRecognizer *panGesture = (UIPanGestureRecognizer *)gesture;
@@ -265,6 +272,8 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
              panGesture.state == UIGestureRecognizerStateEnded ||
              panGesture.state == UIGestureRecognizerStateCancelled) {
         self.leftHandle.highlighted = NO;
+        self.leftValue = [self roundValueToStepValue:self.leftValue];
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
 }
 
@@ -292,6 +301,8 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
              panGesture.state == UIGestureRecognizerStateEnded ||
              panGesture.state == UIGestureRecognizerStateCancelled) {
         self.rightHandle.highlighted = NO;
+        self.rightValue = [self roundValueToStepValue:self.rightValue];
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
 }
 
