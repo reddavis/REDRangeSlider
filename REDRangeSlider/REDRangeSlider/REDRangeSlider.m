@@ -254,6 +254,7 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     
     if (panGesture.state == UIGestureRecognizerStateBegan) {
             self.leftHandle.highlighted = YES;
+            self.rawLeftValue = self.leftValue;
     }
     else if (panGesture.state == UIGestureRecognizerStateChanged) {
         
@@ -262,8 +263,9 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
         
         CGFloat trackOneHundredPercent = self.trackWidth-self.handleImage.size.width;
         CGFloat trackPercentageChange = (pointInView.x / trackOneHundredPercent)*100;
-                        
-        self.leftValue += (trackPercentageChange/100.0) * oneHundredPercentOfValues;
+        
+        self.rawLeftValue += (trackPercentageChange/100.0) * oneHundredPercentOfValues;
+        self.leftValue = self.rawLeftValue;
         
         [panGesture setTranslation:CGPointZero inView:self];
         [self sendActionsForControlEvents:UIControlEventValueChanged];
@@ -283,6 +285,7 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 
     if (panGesture.state == UIGestureRecognizerStateBegan) {
         self.rightHandle.highlighted = YES;
+        self.rawRightValue = self.rightValue;
     }
     if (panGesture.state == UIGestureRecognizerStateChanged) {
         
@@ -292,7 +295,8 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
         CGFloat trackOneHundredPercent = self.trackWidth-self.handleImage.size.width;
         CGFloat trackPercentageChange = (pointInView.x / trackOneHundredPercent)*100;
         
-        self.rightValue += (trackPercentageChange/100.0) * oneHundredPercentOfValues;
+        self.rawRightValue += (trackPercentageChange/100.0) * oneHundredPercentOfValues;
+        self.rightValue = self.rawRightValue;
         
         [panGesture setTranslation:CGPointZero inView:self];
         [self sendActionsForControlEvents:UIControlEventValueChanged];

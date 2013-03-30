@@ -13,5 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *leftValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rightValueLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *restrictionSegmentedControl;
+
+- (IBAction)segmentedControlChanged:(id)sender;
 
 @end

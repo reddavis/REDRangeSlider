@@ -15,6 +15,8 @@
 @property (assign, nonatomic) CGFloat maxValue;
 @property (assign, nonatomic) CGFloat leftValue;
 @property (assign, nonatomic) CGFloat rightValue;
+@property (assign, nonatomic) CGFloat rawLeftValue;
+@property (assign, nonatomic) CGFloat rawRightValue;
 
 @property (strong, nonatomic) UIImage *handleImage;
 @property (strong, nonatomic) UIImage *leftHandleImage;
