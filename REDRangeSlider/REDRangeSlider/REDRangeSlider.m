@@ -210,7 +210,9 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 
 - (UIImage *)trackBackgroundImage {
     if(!_trackBackgroundImage) {
-        UIImage *image = [[UIImage imageNamed:@"slider-track-background"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
+        UIImage *image = ([UIImage instancesRespondToSelector:@selector(resizableImageWithCapInsets:)])
+        ? [[UIImage imageNamed:@"slider-track-background"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)]    // iOS5+
+        : [[UIImage imageNamed:@"slider-track-background"] stretchableImageWithLeftCapWidth:5 topCapHeight:4];  // Same result, pre-iOS5 (deprecated from iOS5)
         _trackBackgroundImage = image;
     }
     return _trackBackgroundImage;
@@ -218,7 +220,9 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 
 - (UIImage *)trackFillImage {
     if(!_trackFillImage) {
-        UIImage *image = [[UIImage imageNamed:@"slider-track-fill"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
+        UIImage *image = ([UIImage instancesRespondToSelector:@selector(resizableImageWithCapInsets:)])
+        ? [[UIImage imageNamed:@"slider-track-fill"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)]    // iOS5+
+        : [[UIImage imageNamed:@"slider-track-fill"] stretchableImageWithLeftCapWidth:5 topCapHeight:4];  // Same result, pre-iOS5 (deprecated from iOS5)
         _trackFillImage = image;
     }
     return _trackFillImage;
