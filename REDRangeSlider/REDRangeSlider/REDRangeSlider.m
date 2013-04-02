@@ -210,7 +210,9 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 
 - (UIImage *)trackBackgroundImage {
     if(!_trackBackgroundImage) {
-        UIImage *image = [[UIImage imageNamed:@"slider-track-background"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
+        UIImage *image = ([UIImage instancesRespondToSelector:@selector(resizableImageWithCapInsets:)])
+        ? [[UIImage imageNamed:@"slider-track-background"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)]    // iOS5+
+        : [[UIImage imageNamed:@"slider-track-background"] stretchableImageWithLeftCapWidth:5 topCapHeight:4];  // Same result, pre-iOS5 (deprecated from iOS5)
         _trackBackgroundImage = image;
     }
     return _trackBackgroundImage;
@@ -218,7 +220,9 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 
 - (UIImage *)trackFillImage {
     if(!_trackFillImage) {
-        UIImage *image = [[UIImage imageNamed:@"slider-track-fill"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)];
+        UIImage *image = ([UIImage instancesRespondToSelector:@selector(resizableImageWithCapInsets:)])
+        ? [[UIImage imageNamed:@"slider-track-fill"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 5, 4, 5)]    // iOS5+
+        : [[UIImage imageNamed:@"slider-track-fill"] stretchableImageWithLeftCapWidth:5 topCapHeight:4];  // Same result, pre-iOS5 (deprecated from iOS5)
         _trackFillImage = image;
     }
     return _trackFillImage;
@@ -254,6 +258,7 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
     
     if (panGesture.state == UIGestureRecognizerStateBegan) {
             self.leftHandle.highlighted = YES;
+            self.rawLeftValue = self.leftValue;
     }
     else if (panGesture.state == UIGestureRecognizerStateChanged) {
         
@@ -262,8 +267,9 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
         
         CGFloat trackOneHundredPercent = self.trackWidth-self.handleImage.size.width;
         CGFloat trackPercentageChange = (pointInView.x / trackOneHundredPercent)*100;
-                        
-        self.leftValue += (trackPercentageChange/100.0) * oneHundredPercentOfValues;
+        
+        self.rawLeftValue += (trackPercentageChange/100.0) * oneHundredPercentOfValues;
+        self.leftValue = self.rawLeftValue;
         
         [panGesture setTranslation:CGPointZero inView:self];
         [self sendActionsForControlEvents:UIControlEventValueChanged];
@@ -283,6 +289,7 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
 
     if (panGesture.state == UIGestureRecognizerStateBegan) {
         self.rightHandle.highlighted = YES;
+        self.rawRightValue = self.rightValue;
     }
     if (panGesture.state == UIGestureRecognizerStateChanged) {
         
@@ -292,7 +299,8 @@ static CGFloat const kREDHandleTapTargetRadius = 20.0;
         CGFloat trackOneHundredPercent = self.trackWidth-self.handleImage.size.width;
         CGFloat trackPercentageChange = (pointInView.x / trackOneHundredPercent)*100;
         
-        self.rightValue += (trackPercentageChange/100.0) * oneHundredPercentOfValues;
+        self.rawRightValue += (trackPercentageChange/100.0) * oneHundredPercentOfValues;
+        self.rightValue = self.rawRightValue;
         
         [panGesture setTranslation:CGPointZero inView:self];
         [self sendActionsForControlEvents:UIControlEventValueChanged];
